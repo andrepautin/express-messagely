@@ -10,5 +10,4 @@ const db = new Client(DB_URI);
 
 db.connect();
 
-
 module.exports = db;
