@@ -141,7 +141,7 @@ class User {
 
   static async messagesTo(username) {
     const result = await db.query(
-    `SELECT messages.id as id,
+      `SELECT messages.id as id,
             messages.body as body,
             messages.sent_at as sent_at,
             messages.read_at as read_at,
@@ -153,8 +153,8 @@ class User {
     JOIN users
     ON users.username = messages.from_username
     WHERE messages.to_username = $1`,
-    [username]
-  );
+      [username]
+    );
     let messages = result.rows
     return messages.map(m => ({
       id: m.id,
